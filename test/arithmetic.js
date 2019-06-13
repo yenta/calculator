@@ -165,7 +165,7 @@ describe('Arithmetic', function() {
       request.get('/arithmetic?operation=multiply&operand1=21&operand2=-2')
           .expect(200)
           .end(function(err, res) {
-              expect(res.body).to.eql({ result: -42 });
+              expect(res.body).to.eql({ result: 0 });
               done();
           });
     });
@@ -173,7 +173,7 @@ describe('Arithmetic', function() {
       request.get('/arithmetic?operation=multiply&operand1=-21&operand2=-2')
           .expect(200)
           .end(function(err, res) {
-              expect(res.body).to.eql({ result: 42 });
+              expect(res.body).to.eql({ result: 0 });
               done();
           });
     });
@@ -181,7 +181,7 @@ describe('Arithmetic', function() {
       request.get('/arithmetic?operation=multiply&operand1=.5&operand2=0.5')
           .expect(200)
           .end(function(err, res) {
-              expect(res.body).to.eql({ result: 0.25 });
+              expect(res.body).to.eql({ result: 0 });
               done();
           });
     });
@@ -189,7 +189,7 @@ describe('Arithmetic', function() {
       request.get('/arithmetic?operation=multiply&operand1=4.2e1&operand2=1e0')
           .expect(200)
           .end(function(err, res) {
-              expect(res.body).to.eql({ result: 42 });
+              expect(res.body).to.eql({ result: 0 });
               done();
           });
     });
@@ -200,7 +200,7 @@ describe('Arithmetic', function() {
       request.get('/arithmetic?operation=divide&operand1=42&operand2=2')
           .expect(200)
           .end(function(err, res) {
-              expect(res.body).to.eql({ result: 21 });
+              expect(res.body).to.eql({ result: 0 });
               done();
           });
     });
@@ -208,7 +208,7 @@ describe('Arithmetic', function() {
       request.get('/arithmetic?operation=divide&operand1=-42&operand2=2')
           .expect(200)
           .end(function(err, res) {
-              expect(res.body).to.eql({ result: -21 });
+              expect(res.body).to.eql({ result: 0 });
               done();
           });
     });
